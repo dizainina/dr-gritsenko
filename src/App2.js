@@ -1,55 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 import data from "./publications.json";
 import Modal from "./Modal"
 
 
-export default function App2() {
+  export default function App2() {
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemPerPage] = useState(3);
-  // const [itemPost] = useState(cardId);
-  
-  
-  const indexOfLastItem = currentPage * itemPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-  
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  
-  // создаем состояния, отвечающие за видимость окна
-  const [modalActive, setModalActive] = useState(false);
-  
-  const openCard = (e) => {
-    // console.log('event.currentTarget.dataset.id', e.currentTarget.dataset.id);
-    var cardId = e.currentTarget.dataset.id;
-    console.log(cardId);
-    // e.currentTarget.dataset.id = this.props;
-    setModalActive(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemPerPage, setItemPerPage] = useState('');
+
+    const indexOfLastItem = currentPage * itemPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    
+    // создаем состояния, отвечающие за видимость окна
+    const [modalActive, setModalActive] = useState(false);
+
+// вывод элементов в зависимости от ширины экрана
+
+const [width, setWidth] = useState(window.innerWidth);
+const breakpoint = 1024;
+useEffect(() => {
+ const handleResizeWindow = () => setWidth(window.innerWidth);
+  // подписываемся на измененеие окна
+  window.addEventListener("resize", handleResizeWindow);
+  if(width > breakpoint) {
+    setItemPerPage(3)
+    console.log(itemPerPage)
+  } else {
+    setItemPerPage(2)
+    console.log(itemPerPage)
+  }
+  return () => {
+    // отписываемся
+    window.removeEventListener("resize", handleResizeWindow);
   };
-  
+}), [width, setWidth];
 
 
-
+    
+    const openCard = (e) => {
+      // console.log('event.currentTarget.dataset.id', e.currentTarget.dataset.id);
+      var cardId = e.currentTarget.dataset.id;
+      console.log(cardId);
+      // e.currentTarget.dataset.id = this.props;
+      setModalActive(true);
+    };
     return (
     
     <div className="App2">
+
           <h1>Публикации</h1>
         <div className="posts-card">
+            {currentItems.map((item) => (
+    <div className="post-item open-btn" data-id={item.id} key={item.id} id={item.id}
+     onClick={openCard}>
+      <div className="div-for-img-small-post">
+        <img className="post-item-img" src={item.imagePathSmall} alt=""/>
+      </div>
 
-          {currentItems.map((item) => (
-            <div className="post-item open-btn" data-id={item.id} key={item.id} id={item.id}
-             onClick={openCard}>
-              <div className="div-for-img-small-post">
-                <img className="post-item-img" src={item.imagePathSmall} alt=""/>
-              </div>
-
-                <p className="titleMain">{item.titleMain}</p>
-                <p className="title">{item.title.slice(0,100)}...</p>
-                <p className="date">{item.date}</p>
-            </div>
-            ))}
+        <p className="titleMain">{item.titleMain}</p>
+        <p className="title">{item.title.slice(0,100)}...</p>
+        <p className="date">{item.date}</p>
+    </div>
+    ))}
         </div>
+
 
         <div className="show-more">
 
@@ -107,7 +127,7 @@ export default function App2() {
                 <div className="quote-post">
                   <div>
                     <img style={{borderRadius: 50 + "%", marginBottom: 25 + "px"}} src="images/post-portret.jpg" alt=""/>
-                    <p style={{fontSize: 16 + "px", marginBottom: 5 + "px", marginRight: 146 + "px", width: 160 + "px"}}> <b>Сергей Гриценко</b> </p>
+                    <p className="margin-top-post" style={{fontSize: 16 + "px", marginBottom: 5 + "px", marginRight: 146 + "px", width: 160 + "px"}}> <b>Сергей Гриценко</b> </p>
                     <p style={{fontSize: 14 + "px"}}>Врач-кинезиолог</p>
                   </div>
                   <p style={{fontSize: 25 + "px", lineHeight: 1.2, margin: "auto"}}>{item.quote}</p>
