@@ -3,7 +3,6 @@ import "./index.css";
 import data from "./publications.json";
 import Modal from "./Modal"
 
-
 export default function App2() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemPerPage, setItemPerPage] = useState('');
@@ -36,7 +35,7 @@ export default function App2() {
         // отписываемся
         window.removeEventListener("resize", handleResizeWindow);
       };
-    }), [];
+    }, []);
 
 
     //  функция для открытия публикации в модальном окне и получение id поста
