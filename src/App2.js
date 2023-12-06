@@ -35,7 +35,7 @@ export default function App2() {
         // отписываемся
         window.removeEventListener("resize", handleResizeWindow);
       };
-    }, []);
+    });
 
 
     //  функция для открытия публикации в модальном окне и получение id поста
