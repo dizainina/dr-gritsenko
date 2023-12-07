@@ -799,7 +799,7 @@ label{
     margin-top: 2rem;
     background: #cab8aba1;
     pointer-events: none;
-
+    border-radius: 0;
     font-size: calc(0.9rem + 1 * (100vw - 320px) / 880);
 
     text-align: left;
@@ -1656,7 +1656,7 @@ iframe{
     .advMiddle{
         display: flex;
         flex-direction: column;
-        width: 98vw;
+        width: 100%;
     }
     .titleOn {
         display: none;
@@ -1732,8 +1732,8 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 1024px){
     .container {
-        max-width: 1024px;
-        padding: 24px;
+        width: 1024px;
+        /* padding: 24px; */
     }
     .header{
         height: 780px;
@@ -1764,7 +1764,7 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 980px){
     .container {
-        max-width: 980px;
+        width: 980px;
     }
     .col-about{
         width: 49vw;
@@ -1786,7 +1786,7 @@ iframe{
 
 @media (max-width: 890px){
     .container {
-        max-width: 890px;
+        width: 890px;
     }
     .slider {
         /* height: 431px; */
@@ -1802,7 +1802,7 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 840px){
     .container {
-        max-width: 840px;
+        width: 840px;
     }
     .grid{
         grid-template-columns: repeat(2, 48%);
@@ -1854,7 +1854,7 @@ iframe{
 
 @media (max-width: 790px){
     .container {
-        max-width: 790px;
+        width: 790px;
     }
     .header{
         height: 720px;
@@ -1923,7 +1923,7 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 690px){
     .container {
-        max-width: 690px;
+        width: 690px;
     }
     input, textarea, #submit{
         height: 2rem;
@@ -1932,7 +1932,7 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 608px){
     .container {
-        max-width: 608px;
+        width: 608px;
     }
     .slider-container{
         width: 100%;
@@ -1981,7 +1981,7 @@ iframe{
         background-size: 114%;
     }
     .container {
-        max-width: 590px;
+        width: 590px;
     }
     .more-comments-none{
         display: flex;
@@ -2038,7 +2038,7 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 490px){
     .container {
-        max-width: 490px;
+        width: 490px;
     }
     .popup {
         width: 315px;
@@ -2062,7 +2062,7 @@ iframe{
         background-size: 115%;
     }
     .container {
-        max-width: 414px;
+        width: 414px;
     }
     .about, .col-about{
         width: 100%;
