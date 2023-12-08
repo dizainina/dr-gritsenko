@@ -356,6 +356,7 @@ h1{
 }
 /* ---------------------АДАПТИВ-------------- */
 @media (max-width: 1100px){
+
   .App, .main-post, .modal-container_postsPopup, .div-for-quote {
       width: 1100px;
   }
@@ -373,6 +374,9 @@ h1{
   .App, .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 1024px;
   }
+  body, html{
+    overflow-x: hidden;
+}
   /* .App2{
     padding: 0 5%;
   } */
