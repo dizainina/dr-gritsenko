@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/dr-gritsenko/static/css/main.8ec0894f.css",
+    "main.css": "/dr-gritsenko/static/css/main.117cc5d1.css",
     "main.js": "/dr-gritsenko/static/js/main.f6daaebb.js",
     "static/js/787.3b78e5c6.chunk.js": "/dr-gritsenko/static/js/787.3b78e5c6.chunk.js",
     "index.html": "/dr-gritsenko/index.html",
     "static/media/arrow_left.svg": "/dr-gritsenko/static/media/arrow_left.c5cf65b8f4da97a82d17.svg",
     "static/media/arrow-right-brown.svg": "/dr-gritsenko/static/media/arrow-right-brown.8d95d0fc0bf3e7c21f88.svg",
-    "main.8ec0894f.css.map": "/dr-gritsenko/static/css/main.8ec0894f.css.map",
+    "main.117cc5d1.css.map": "/dr-gritsenko/static/css/main.117cc5d1.css.map",
     "main.f6daaebb.js.map": "/dr-gritsenko/static/js/main.f6daaebb.js.map",
     "787.3b78e5c6.chunk.js.map": "/dr-gritsenko/static/js/787.3b78e5c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ec0894f.css",
+    "static/css/main.117cc5d1.css",
     "static/js/main.f6daaebb.js"
   ]
 }
