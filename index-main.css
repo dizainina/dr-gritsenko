@@ -221,7 +221,10 @@ hr {
     position: relative;
     top: 12px;
 }
-
+#phone-text a{
+    color:#D5A789; 
+    text-decoration:none;
+}
 .menu span:before, .menu span:after {
     position: absolute;
     content: '';
@@ -1621,7 +1624,7 @@ iframe{
         background: #D5A789; /* ползунок меняет цвет при наведении */
     }
     .popup {
-        height: 82vh;
+        height: 76vh;
     }
 } 
 /* ------------------------------ */
@@ -1867,7 +1870,7 @@ iframe{
         height: 2rem;
     }
     .popup{
-    height: 80vh;
+    height: 69vh;
 
     }
     .slider-container{
