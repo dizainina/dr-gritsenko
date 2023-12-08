@@ -335,9 +335,9 @@ img.rot {
     margin-top: 10vh;
 }
 
-.modal-footer>p {
+/* .modal-footer>p {
     color: #D5A789
-}
+} */
 
 .modal-footer h3 {
     text-transform: none;
@@ -516,7 +516,7 @@ img.rot {
 
 }
 .slider {
-    height: 100%;
+    height: 85%;
     transition: 0.5s;
 
     display: flex;
@@ -528,7 +528,7 @@ img.rot {
 .item {
     display: flex;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 100%;
     color: white;
 }
 .item_col h1{
@@ -1510,8 +1510,8 @@ iframe{
     .popup-text{
         font-size: 40px;
     }
-    .header{
-        /* height: 850px; */
+    .item_col h1{
+        font-size: 3.5rem;
     }
     .container-price{
         margin-left: 5%;
@@ -1531,9 +1531,7 @@ iframe{
     .container {
         width: 1100px;
     }
-    .header{
-        /* height: 800px; */
-    }
+
     .experience, .advantages, .comment, .certificate,  .posts, .container-footer, .post-item, .post-item-image img, .adv{
         width: 93vw;
     }
@@ -1577,7 +1575,7 @@ iframe{
     }
     .item_col h1 {
         font-size: 3.3rem;
-        margin-top: -10rem !important;
+        margin-top: -5rem !important;
     }
     .input, textarea, #submit{
         height: 1.8rem;
@@ -1905,7 +1903,7 @@ iframe{
 @media (max-width: 590px){
     .header{
         /* height: 700px; */
-        background-size: 114%;
+        background-size: 120%;
     }
     .container {
         width: 590px;
@@ -1988,12 +1986,17 @@ iframe{
         left: 91%;
         top: 1%;
     }
+    .header{
+        /* height: 700px; */
+        background-size: 140%;
+    }
 }
 /* ------------------------------ */
 @media (max-width: 414px){
     .header{
         /* height: 658px; */
-        background-size: 115%;
+        background-size: 151%;
+        background-position-x: 65%;
     }
     .container {
         width: 414px;
@@ -2070,7 +2073,7 @@ iframe{
     } */
     .header{
         /* height: 658px; */
-        background-size: 158%;
+        background-size: 170%;
         background-position-x: 84%;
     }
     .item_col h1{
@@ -2119,6 +2122,12 @@ iframe{
         width: 300px;
     }
 }
+@media (max-width: 340px){
+    .header{
+        /* height: 658px; */
+        background-size: 178%;
+    }
+}
 
 /* ------------------------------ */
 @media (max-width: 280px){
@@ -2133,7 +2142,7 @@ iframe{
     }
     .header{
         /* height: 658px; */
-        background-size: 158%;
+        background-size: 172%;
     }
     .slider {
         /* height: 431px; */

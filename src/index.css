@@ -199,6 +199,7 @@ h1{
   justify-content: center;
   opacity: 0;
   transition: 0.5s;
+  overflow-x: hidden;
   /* чтобы можно было работать с текстом на странице */
   pointer-events: none;
 
@@ -212,7 +213,7 @@ h1{
 .modal-post__content{
   padding: 20px;
   background-color: rgb(249, 249, 249);
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   transform: scale(0.5);
   transition: 0.4s all;
@@ -277,7 +278,7 @@ h1{
 }
 .head-img{
   /* height: 700px; */
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 .head-img img{
