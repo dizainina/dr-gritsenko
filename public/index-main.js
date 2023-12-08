@@ -177,8 +177,8 @@ intlTelInput(inputPhone, {
         preferredCountries: ['ru', 'by', 'ua'],
         separateDialCode: true,
         nationalMode: false,
-        hiddenInput: "full",
-        utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
+        // hiddenInput: "full",
+        // utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
 });
 
 

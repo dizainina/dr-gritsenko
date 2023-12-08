@@ -172,6 +172,7 @@ h1{
   background: none;
   cursor: pointer;
   height: 20px;
+  color: #000;
 }
 .show-more-button:hover, .post-item:hover  {
   opacity: 0.5;

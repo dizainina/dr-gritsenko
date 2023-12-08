@@ -10,6 +10,8 @@ export default function App2() {
     const indexOfLastItem = currentPage * itemPerPage;
     const indexOfFirstItem = indexOfLastItem - itemPerPage;
     const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    let itemsForModal;
+
     
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -37,21 +39,20 @@ export default function App2() {
       };
     }, [width]);
 
-    const [postId, setPostId] = useState(0);
-    let postIdOnclick;
-    
-    //  функция для открытия публикации в модальном окне и получение id поста
-    const openCard = (e) => {
-      // console.log(postId + " это переменная для юсстейт");
-      postIdOnclick = e.currentTarget.dataset.id;
-      // console.log(postIdOnclick + " это id");
-      setPostId(postIdOnclick);
-      // console.log(setPostId + " это новое состояние");
-      setModalActive(true);
-    };
+  //  функция для открытия публикации в модальном окне и получение id поста
+  // создаем еще одно состояние, чтобы в нее запомнить айди
+  const [filteredData, setFilteredData] = useState([]);
+  //переменная для id
+  let postIdOnclick;
 
-    // console.log(postIdOnclick + " это id за пределами openCard");
-
+  //  функция для открытия публикации в модальном окне и получение id поста
+  const openCard = (e) => {
+    postIdOnclick = e.currentTarget.dataset.id;
+    itemsForModal = currentItems.filter((item) => item.id == postIdOnclick);
+    setFilteredData(itemsForModal);
+    console.log(itemsForModal);
+    setModalActive(true);
+  };
 
     return (
     <div className="App2">
@@ -91,7 +92,7 @@ export default function App2() {
             </div>
 
             <div className="container_postsPopup">
-              {currentItems.map((item) => (
+            {filteredData.map((item) => (
               <div className="modal-container_postsPopup" key={item.id}>
                 <div className="head-post">
                   <div className="title-head-post">
@@ -101,10 +102,10 @@ export default function App2() {
                   <div className="repost">
                       <p className="date" style={{fontSize: 14 + "px", marginRight: 15 + "px"}}>Поделиться статьей:</p>
                       <div className="repost-icon">
-                        <a href="https://vk.com/share.php?url=http://localhost:3000&text=Врач+Гриценко+Сергей" target="_blank" rel="noreferrer"><img src="images/vk.png" alt=""/></a>
-                        <a href="https://connect.ok.ru/offer?url=http://localhost:3000&text=Врач+Гриценко+Сергей"  target="_blank" rel="noreferrer"><img src="images/ok.png" alt="" /></a>
-                        <a href="http://twitter.com/share?http://localhost:3000&text=Врач+Гриценко+Сергей"  target="_blank" rel="noreferrer"><img src="images/twitter.png" alt="" /></a>
-                        <a href="https://telegram.me/share/url?url=http://localhost:3000&text=Врач+Гриценко+Сергей"  target="_blank" rel="noreferrer"><img src="images/telegramm.png" alt="" /></a>
+                        <a href="https://vk.com/share.php?url=https://dizainina.github.io/dr-gritsenko/" target="_blank" rel="noreferrer"><img src="images/vk.png" alt=""/></a>
+                        <a href="https://connect.ok.ru/offer?url=https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/ok.png" alt="" /></a>
+                        <a href="http://twitter.com/share?https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/twitter.png" alt="" /></a>
+                        <a href="https://telegram.me/share/url?url=https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/telegramm.png" alt="" /></a>
                       </div>
                   </div>
                 </div>
