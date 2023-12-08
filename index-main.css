@@ -1504,6 +1504,10 @@ iframe{
         margin-left: 5%;
         margin-right: 2%;
     }
+    body, html{
+        overflow-x: hidden;
+    
+    }
 }
 /* ------------------------------ */
 @media (max-width: 1100px){
