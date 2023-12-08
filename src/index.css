@@ -8,8 +8,9 @@
 .modal-open {
   overflow: hidden;
   }
-body{
+body, html{
     overflow-x: hidden;
+    width: 100%;
 }
 .App {
   width: 100%;
@@ -364,11 +365,17 @@ h1{
   .App2, .posts-card{
     width: 100%;
   }
+  .titleMain {
+    height: 4rem;
+  }
 }
 @media (max-width: 1024px){
   .App, .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 1024px;
   }
+  /* .App2{
+    padding: 0 5%;
+  } */
   .commentsPopup-navigation{
     justify-content: center !important;
   }
@@ -406,6 +413,9 @@ h1{
   .repost{
     width: 100%;
     margin-top: 5%;
+  }
+  .titleMain {
+    height: 2rem;
   }
 
 }

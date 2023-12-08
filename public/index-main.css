@@ -14,9 +14,12 @@
 .opacity{
     opacity: 0.2;
 }
-body{
+
+body, html{
     overflow-x: hidden;
+    width: 100%;
     position: relative;
+
 }
 body._lock{
     overflow: hidden;
@@ -32,10 +35,12 @@ main{
 }
 
 .container {
-    max-width: 1200px;
+    width: 1200px;
     display: flex;
     flex-direction: row;
-    padding: 0 2%;
+    /* padding: 0 2%; */
+    padding: 0 5%;
+
 
 }
 
@@ -115,98 +120,7 @@ a{
     color: white;
     position: relative;
 }
-/* бургер */
-/* .menu-icon{
-    display: none;
-}
-@media (min-width: 1024px){
-    .nav-menu{
-        max-width: 100%;
-        display: flex;
-        align-items: end;
-        justify-content: stretch;
-    }
-}
 
-@media (max-width: 1024px){
-    .menu-icon{
-        z-index: 500000000000000000;
-        display: block;
-        position: absolute;
-        width: 50px;
-        height: 18px;
-        cursor: pointer;
-        top: 70px;
-        left: 70px;
-        margin: 0;
-    }
-    .menu-icon span,
-    .menu-icon::before,
-    .menu-icon::after {
-        left: 0;
-        position: absolute;
-        height: 10%;
-        width: 100%;
-        transition: all 0.3s ease 0s;
-        background-color: #fff;
-    }
-    .menu-icon::before,
-    .menu-icon::after{
-        content: "";
-    }
-    .menu-icon::before{
-        top: 0;
-    }
-    .menu-icon::after{
-        bottom: 0;
-    }
-    .menu-icon span{
-        top: 50%;
-        transform: scale(1) translate(0px, -50%);
-    }
-    .menu-icon._active span{
-        transform: scale(0) translate(0px, -50%);
-    }
-    .menu-icon._active::before{
-        top: 50%;
-        transform: rotate(-45deg) translate(0px, -50%);
-    }
-    .menu-icon._active::after{
-        top: 50%;
-        transform: rotate(45deg) translate(0px, 50%);
-    }
-    .nav-menu{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: translate(-100%, 0px);
-        background-color: rgba(23, 22, 22, 0.7);
-        padding: 100px 30px 30px 30px;
-        transition: all 0.3s ease 0s;
-    }
-
-    .nav-menu ._active{
-        left: 0;
-    }
-    .nav-menu::before{
-        content: "";
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        height: 70px;
-        background-color: #a86060;
-        z-index: 2;
-
-    }
-    .nav-menu > li {
-        margin: 0 0 30px 0;
-        font-size: 24px;
-    }
-
-} */
 .mobile-navigation {
     display: none;
 }
@@ -340,7 +254,7 @@ hr {
     margin: auto;
     padding: 0;
     width: 100%;
-    height: 98vh;
+    height: 99vh;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -671,14 +585,6 @@ img.rot {
         height: 80%;
         padding: 10px;
     }
-
-
-
-    /* .arrow_mobile {
-        display: flex;
-        justify-content: space-around;
-    } */
-
     .previous_mobile, .next_mobile {
         align-self: center;
         cursor: pointer;
@@ -709,17 +615,15 @@ img.rot {
 }
 
 .modal_container {
-    /* padding: 30px; */
-    /* width: 100%;
-    max-width: 600px;
-    max-height: 897px;
-    height: 100%; */
     display: flex;
     flex-direction: column;
-    /* align-items: stretch; */
-    /* justify-content: space-between; */
+    height: 100%;
+    justify-content: space-between;
 }
-
+.form-body{
+    height: 75%;
+    display: flex;
+}
 .popup {
     background: rgba(255, 255, 255, 1);
     transition: 0.5s all;
@@ -728,14 +632,8 @@ img.rot {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 2rem;
-    /* max-width: 100%;
-    max-height: 70%; */
     width: 600px;
-    /* max-width: 600px;
-    max-height: 897px; */
-    height: 697px;
-    /* min-width: 600px;
-    min-height: 897px; */
+    height: 91vh;
 }
 
 .popup.active { 
@@ -793,7 +691,7 @@ input:active, textarea:active{
 label{
     color: #D5A789;
     font-size: small;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .modal_container .form .order-btn{
     margin-top: 2rem;
@@ -933,9 +831,6 @@ h1{
 .experience{
     text-align: center;
     padding: 2rem 0;
-
-    /* width: 100%; */
-    /* transform: translateX(-100%); */
 }
 
 .experience ._active{
@@ -944,24 +839,11 @@ h1{
     opacity: 1;
     transition: all 0.8s ease 0.8s;
 }
-/* .adv h1{
-    transform: translate(-120%, 0px);
-    opacity: 0;
-}
-.experience ._active{
-    transform: translate(0px, 0px);
-
-    opacity: 1;
-    transition: all 0.8s ease 0.8s;
-} */
 
 .exp{
     border: 1px solid rgb(199, 195, 195);
     border-right: none ;
-    /* width: calc(16.25rem + 70 * (100vw - 320px) / 880); */
     width: 20.6rem;
-    /* width: 1200px; */
-
     height: 18rem;
     min-width: 320px;
 }
@@ -1002,10 +884,6 @@ h1{
     transition: all 0.8s ease 0s;
 }
 
-/* .experience ._active{
-    transform: translateX(0);
-    transition: all 0.8s ease 0.8s;
-} */
 /* ------------------------ПОЧЕМУ СТОИТ МЕНЯ ВЫБРАТЬ-------- */
 
 .titleNone {
@@ -1182,7 +1060,7 @@ h1{
     width: 55px;
     height: 55px;
     z-index: 100000000;
-    margin: 0 2% 2% 0;
+    margin: 10px 2% 2% 0;
 
 }
 .modal-container-commentsPopup{
@@ -1447,7 +1325,9 @@ h1{
 }
 .slider-price{
     width: 100%;
-    overflow-x: auto;
+    /* overflow-x: auto; */
+    overflow-x: hidden;
+
     overflow-y: hidden;
     display: flex;
     justify-content: space-between;
@@ -1460,22 +1340,18 @@ h1{
 .price-item-middle{
     margin: 0 1.2rem;
 }
-/* ---------------------------ПУБЛИКАЦИИ---------
-
-.show-more {
-    margin-top: 2rem;
-    text-align: center;
+/* ---------------------------ПУБЛИКАЦИИ---------*/
+.posts{
+    width: 1200px;
+    margin: 0 auto;
 }
-
-.show-more a:hover  {
-    opacity: 0.5;
+#posts{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 auto; */
 }
-.more-comments-none{
-    display: none;
-}
-.margin-x{
-    margin: 0 1%;
-}
+    
 /* --------------------------------------------------------------ФУТЕР-------- */
 footer{
     font-family: "Plain", sans-serif;
@@ -1589,20 +1465,7 @@ iframe{
       background-color: #bebebe86; /* цвет заднего фона при наведении */
     }
 }
-/* ---------------------------------------------------- */
 
-/* -----------------отключиено пока--------------------------------- */
-.element-animation {
-    /* Скроем элемент в начальном состоянии */
-    opacity: 0;
-    transform: translateY(100%);
-}
-
-.element-animation.element-show {
-    opacity: 1;
-    transition: all 1s;
-    transform: translateY(0%);
-}
 /* ---------------------------------------------------- */
 @media (min-width: 1200px){
     /* полоса прокрутки  у некоторых блоков (опыт, прайс и почему стоит меня выбрать) */
@@ -1629,7 +1492,7 @@ iframe{
 @media (max-width: 1200px){
     .popup {
         width: 485px;
-        height: 619px;
+        height: 88vh;
     }
     .popup-text{
         font-size: 40px;
@@ -1657,6 +1520,10 @@ iframe{
         display: flex;
         flex-direction: column;
         width: 100%;
+        overflow-x: hidden;
+    }
+    .experience{
+        overflow-x: hidden;
     }
     .titleOn {
         display: none;
@@ -1682,7 +1549,7 @@ iframe{
     }
     .popup {
         width: 490px;
-        height: 602px;
+        /* height: 602px; */
     }
     .item_col {
         width: 85%;
@@ -1692,7 +1559,7 @@ iframe{
         margin-top: -10rem !important;
     }
     .input, textarea, #submit{
-        height: 2rem;
+        height: 1.8rem;
     }
     .col {
         width: 53%;
@@ -1728,6 +1595,9 @@ iframe{
     ::-webkit-scrollbar-thumb:hover {
         background: #D5A789; /* ползунок меняет цвет при наведении */
     }
+    .popup {
+        height: 82vh;
+    }
 } 
 /* ------------------------------ */
 @media (max-width: 1024px){
@@ -1755,7 +1625,7 @@ iframe{
     }
     .popup {
         width: 439px;
-        height: 575px;
+        /* height: 575px; */
     }
     .popup-text{
         font-size: 36px;
@@ -1834,7 +1704,7 @@ iframe{
     }
     .popup {
         width: 397px;
-        height: 557px;
+        /* height: 557px; */
     }
     .popup-text{
         font-size: 34px;
@@ -1849,6 +1719,14 @@ iframe{
         left: 93%;
         /* width: 40px; */
     }
+    .popup {
+        width: 485px;
+        /* height: 78vh; */
+    }
+    .footer{
+        padding: 10% 5% 5%;
+    }
+
 }
 /* ------------------------------ */
 
@@ -1908,7 +1786,7 @@ iframe{
     }
     .popup {
         width: 387px;
-        height: 554px;
+        /* height: 554px; */
     }
         .popup-text{
         font-size: 32px;
@@ -1919,6 +1797,9 @@ iframe{
     .closeCommentsPopupBtn{
         width: 40px;
     }
+    .btn-brown{
+        width: 30%;
+    }
 }
 /* ------------------------------ */
 @media (max-width: 690px){
@@ -1928,6 +1809,11 @@ iframe{
     input, textarea, #submit{
         height: 2rem;
     }
+    .popup{
+    height: 80vh;
+
+    }
+
 }
 /* ------------------------------ */
 @media (max-width: 608px){
@@ -1972,6 +1858,9 @@ iframe{
     .img-close-popup {
         right: 1rem;
         font-size: 20px;
+    }
+    .btn-brown{
+        width: 100%;
     }
 }
 /* ------------------------------ */
@@ -2025,7 +1914,7 @@ iframe{
     }
     .popup {
         width: 367px;
-        height: 538px;
+        /* height: 538px; */
     }
     .popup-text{
         font-size: 30px;
@@ -2042,7 +1931,7 @@ iframe{
     }
     .popup {
         width: 315px;
-        height: 528px;
+        /* height: 528px; */
     }
         .popup-text{
         font-size: 28px;
@@ -2118,6 +2007,9 @@ iframe{
     .closeCommentsPopupBtn{
         left: 88%;
     }
+    .popup{
+        height: 75vh;
+    }
 }
 /* ------------------------------ */
 @media (max-width: 380px){
@@ -2150,7 +2042,7 @@ iframe{
     }
     .popup {
         width: 280px;
-        height: 500px;
+        /* height: 500px; */
     }
     .popup-text{
         font-size: 24px;
@@ -2204,7 +2096,7 @@ iframe{
     }
     .popup {
         width: 260px;
-        height: 489px;
+        /* height: 489px; */
     }
     .popup-text{
         font-size: 20px;

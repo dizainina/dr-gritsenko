@@ -35,16 +35,22 @@ export default function App2() {
         // отписываемся
         window.removeEventListener("resize", handleResizeWindow);
       };
-    });
+    }, [width]);
 
-
+    const [postId, setPostId] = useState(0);
+    let postIdOnclick;
+    
     //  функция для открытия публикации в модальном окне и получение id поста
     const openCard = (e) => {
-      const cardId = e.currentTarget.dataset.id;
+      // console.log(postId + " это переменная для юсстейт");
+      postIdOnclick = e.currentTarget.dataset.id;
+      // console.log(postIdOnclick + " это id");
+      setPostId(postIdOnclick);
+      // console.log(setPostId + " это новое состояние");
       setModalActive(true);
-      setItemPerPage('');
-      console.log(cardId)
     };
+
+    // console.log(postIdOnclick + " это id за пределами openCard");
 
 
     return (
@@ -78,7 +84,7 @@ export default function App2() {
 
         </div>
         
-        <Modal active={modalActive} setActive={setModalActive}>
+        <Modal active={modalActive} setActive={setModalActive} >
           <div className="postsPopup">
             <div className="closePostsPopup" onClick={() => setModalActive(false)}>
               <span className="closePostsPopup-img"><img src="images/ei_close_black.svg" alt="" /></span>

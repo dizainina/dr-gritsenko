@@ -1,47 +1,6 @@
-// "use strict"
+"use strict"
+// строгий режим
 
-// const isMobile = {
-//         Android: function () {
-//                 return navigator.userAgent.match(/Android/i);
-//         },
-//         BlackBerry: function () {
-//                 return navigator.userAgent.match(/BlackBerry/i);
-//         },
-//         iOS: function () {
-//                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-//         },
-//         Opera: function () {
-//                 return navigator.userAgent.match(/Opera Mini/i);
-//         },
-//         Windows: function () {
-//                 return navigator.userAgent.match(/IEMobile/i);
-//         },
-//         any: function () {
-//                 return (
-//                         isMobile.Android() ||
-//                         isMobile.iOS() ||
-//                         isMobile.BlackBerry() ||
-//                         isMobile.Opera() ||
-//                         isMobile.Windows());
-//         },
-// };
-
-// if(isMobile.any()) {
-//         document.body.classList.add('_touch');
-// }else{
-//         document.body.classList.add('_pc');
-// }
-
-// const iconMenu = document.querySelector('.menu-icon');
-// if(iconMenu){
-//         const menuBody = document.querySelector('.nav-menu');
-//         iconMenu.addEventListener("click", function(e) {
-//                 document.body.classList.toggle('_lock');
-//                 iconMenu.classList.toggle('_active');
-//                 menuBody.classList.toggle('_active');
-
-//         })
-// }
 
 // прокрутка при клике
 const menuLinks = document.querySelectorAll('a[data-goto]');
@@ -196,25 +155,7 @@ function showSlides(n) {
 setInterval(plusSlide, 4000);
 
 
-
-
-// ---------------------------------------------анимация  (ОТКЛЮЧЕНА)
-
-// function onEntry(entry) {
-//         entry.forEach(change => {
-//           if (change.isIntersecting) {
-//             change.target.classList.add('element-show');
-//           }
-//         });
-//       }
-// let options = { threshold: [0.5] };
-// let observer = new IntersectionObserver(onEntry, options);
-// let elements = document.querySelectorAll('.element-animation');
-// for (let elm of elements) {
-//         observer.observe(elm);
-// };
-
-// ******************************ПОП-АП Записаться на консультацию**********************************
+// ******************ПОП-АП Записаться на консультацию**********************
 
 let popupBg = document.querySelector('.popup__bg'); // Фон попап окна
 let popup = document.querySelector('.popup'); // Само окно
@@ -222,46 +163,49 @@ let openPopupButtons = document.querySelectorAll('.open-popup'); // Кнопки
 let closePopupButton = document.querySelector('.close-popup'); // Кнопка для скрытия окна
 
 var form = document.querySelector("#form");
+
+
 var personName = document.querySelector("#form-name");
-var personMessage = document.querySelector("#form-mesage");
-let goodByText = document.querySelector('.goodByText');
-let orderСonsultationText = document.querySelector('.orderСonsultationText');
+var personMessage = document.querySelector("#form-message");
 
 // инициализируем маску и intlTelInput (флаги стран)
 const inputPhone = document.querySelector("#phone");
 const orderBtn = document.querySelector(".order-btn");
+
 intlTelInput(inputPhone, {
         initialCountry: "ru",
         preferredCountries: ['ru', 'by', 'ua'],
-        separateDialCode: true
+        separateDialCode: true,
+        nationalMode: false,
+        hiddenInput: "full",
+        utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
 });
+
+
 const mask = new IMask(inputPhone,  {
         mask: '(000)000-00-00',
         lazy: false,
 })
-
+inputPhone.addEventListener("click", () => {
+        mask.updateValue("");
+      }); 
 
 personName.addEventListener("input", inputPhoneHandler);
 inputPhone.addEventListener("input", inputPhoneHandler);
 personMessage.addEventListener("input", inputPhoneHandler);
 // включение-отключение кнопки 
 function inputPhoneHandler(){
-        if(personName.value.length > 0 && mask.masked.isComplete && personMessage.value.length > 0) {
+        if(personName.value.length > 0 && mask.masked.unmaskedValue && personMessage.value.length > 0) {
                 orderBtn.classList.add('order-btn--active');
         }else {orderBtn.classList.remove('order-btn--active');}
 }
+
 // оформление заказа
-orderBtn.addEventListener("click", saveContact);
-function saveContact(e) {
-        e.preventDefault();
-        console.log(personName.value);
-        console.log(mask.masked.unmaskedValue);
-        console.log(personMessage.value);
-        document.forms[0].reset();
-        goodByText.style.display = 'block';
-        orderСonsultationText.style.display = 'none';
-        orderBtn.classList.remove('order-btn--active');
-}
+orderBtn.addEventListener("click", sendEmailTelegram);
+// отправка формы  в бот
+const TELEGRAM_BOT_TOKEN = '5937729381:AAEaLNAOPgViFHp573hqj4WT4_J9TucRNRQ';
+const TELEGRAM_CHAT_ID = '@ForSiteGritsenko';
+const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
 
 // запрет на отправку формы при нажатии на клавишу Enter
 form.addEventListener('keydown', function(event) {
@@ -270,19 +214,70 @@ form.addEventListener('keydown', function(event) {
         }
 });
 
+async function sendEmailTelegram(event) {
+        event.preventDefault();
+        // console.log(form)
+
+        const formSendResult = document.querySelector('.form__send-result')
+        formSendResult.textContent = '';
+
+        // деструктуризация {...}
+        const { name, phone = mask.masked.unmaskedValue, message } = Object.fromEntries(new FormData(form).entries());
+        console.log( { name, phone, message } )
+
+        const text = `Заявка от ${name}\nТелефон: ${phone} \nСообщение: ${message}`;
+        console.log(text)
+
+        try {
+                orderBtn.textContent = 'Отправляем заявку...';
+
+                const response = await fetch(API, {
+                method: "POST",
+                headers: {
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text,
+                })
+                })
+                
+                if (response.ok) {
+                formSendResult.textContent = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+                form.reset()
+
+                } else {
+                throw new Error(response.statusText);
+                }
+
+        } catch (error) {
+                console.error(error);
+                formSendResult.textContent = 'Анкета не отправлена! Попробуйте позже.';
+                formSendResult.style.color = 'red';
+
+        } finally {
+                orderBtn.textContent = 'Записаться на прием';
+                orderBtn.classList.remove('order-btn--active');
+                form.reset()
+        }
+}
+
+
+
+
 // открытие поп-апа
 openPopupButtons.forEach((button) => { // Перебираем все кнопки
   button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
         e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-        goodByText.style.display = 'none';
-        if(orderСonsultationText.style.display = 'block'){
+        // goodByText.style.display = 'none';
+        // if(orderСonsultationText.style.display = 'block'){
                 popupBg.classList.add('active'); // Добавляем класс 'active' для фона
                 popup.classList.add('active'); // И для самого окна
-        }else if(orderСonsultationText.style.display = 'none'){
-                popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-                popup.classList.add('active'); // И для самого окна
-                orderСonsultationText.style.display = 'block';
-        }
+        // }else if(orderСonsultationText.style.display = 'none'){
+        //         popupBg.classList.add('active'); // Добавляем класс 'active' для фона
+        //         popup.classList.add('active'); // И для самого окна
+        //         orderСonsultationText.style.display = 'block';
+        // }
         })
 });
 // закрытие поп-апа с крестика
@@ -298,6 +293,7 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
                 popup.classList.remove('active'); // И с окна
         }
 });
+
 
 // *************************ПОП-АП Отзывы**********************************
 let openCommentsPopupBtn = document.querySelectorAll('.openCommentsPopupBtn'); // Кнопки для показа окна

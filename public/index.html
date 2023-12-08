@@ -400,10 +400,6 @@
         </div>
 
         <div class="slider-price  scrolling-wrapper experience">
-          <!-- <div class="slides"> -->
-            <!-- <input type="radio" name="r" id="r1" checked>
-            <input type="radio" name="r" id="r1">
-            <input type="radio" name="r" id="r1"> -->
 
             <div class="price-item _anim-items price-item-anim">
               <p class="text-white in-border">УСЛУГА</p>
@@ -453,36 +449,12 @@
               </div>
             </div>
             
-            <!-- <div class="price-item _anim-items price-item-anim">
-              <p class="text-white in-border">УСЛУГА</p>
-              <p class="text-white small">Дистанционная <br> консультация</p>
-              <p class="text-white text-white-small none">Сбор анамнеза, диагностика через<br>мышечные рефлексы разных систем<br>органов и др.; подбор препаратов и<br>нутрицевтиков и эмоциональной<br>коррекции. </p>
-              <div class="price-big-text">
-                <p class="big-text">8</p>
-                <p class="text-white small">тыс <br> руб.</p>
-              </div>
-              <div class="buttons">
-                <div class="btn-brown open-popup">
-                  <a href="#">Записаться на прием</a>
-                </div>
-                <img class="arrow-long" src="images/arrow-left_white.svg" alt="arrow">
-              </div>
-            </div> -->
         </div>
-<!-- 
-          <div class="slides-navigation">
-            <label for="r1" class="bar"></label>
-            <label for="r2" class="bar"></label>
-            <label for="r3" class="bar"></label>
-
-          </div> -->
       </div>
-
-      <!-- </div> -->
     </section>
 
 <!-- **********************ПУБЛИКАЦИИ********************* -->
-    <section class="container margin-t posts">
+    <section class="margin-t posts">
       <div id="posts"></div>
     </section>
   </main>
@@ -561,7 +533,7 @@
         </div>
 
         <div class="btn-brown-footer open-popup">
-          <div class="btn-brown" style="width: 100%;">
+          <div class="btn-brown">
             <button style="background: none; border: none; padding: 0; color: white; font-size: 15px;">Записаться на прием</button>
             <img  class="arrow-footer" src="images/arrow-left_white.svg" alt="arrow">
         </div>
@@ -591,27 +563,30 @@
 <!-- **************** Окно ПОПАП Записаться на прием****** -->
   <section class="popup__bg">
     <div class="popup">
-      <h1 class="popup-text  goodByText">Спасибо! <br> Мы Вам <br>перезвоним!</h1>
-      <!-- <span class="img-close-popup close-popup"><img src="images/ei_close.svg" alt=""></span> -->
       <span class="img-close-popup close-popup">&#215;</span>
 
       <div class="modal_container">
         <h1 class="popup-text orderСonsultationText">Заказать <br> консультацию</h1>
-        <!-- <p class="warning-text disp-none">Все поля обязательны для заполнения!</p> -->
+        <div class="form__send-result"></div>
 
         <div class="form-body">
-          <form action="#" id="form" class="form">
-            <label class="form-label" for="form-name">Ваше имя</label>
-            <input type="text" class="" id="form-name" name="name" placeholder="Имя" >
-            <label class="phone" for="phone">Номер телефона</label>
-            <input type="tel" id="phone" name="phone" class="phone" placeholder="(___)___-__-__">
-            <label for="form-mesage" class="form-label">Ваше сообщение</label>
-            <textarea id="form-mesage" placeholder="Сообщение" ></textarea>
+          <form id="form" class="form">
+
+              <label class="form-label" for="form-name">Ваше имя</label>
+              <input type="text" id="form-name" name="name" placeholder="Имя" >
+
+              <label class="phone" for="phone">Номер телефона</label>
+              <input type="tel" id="phone" name="phone" class="phone">
+
+              <label for="form-message" class="form-label">Опишите Вашу ситуацию. Можете указать дополнительный вариант связи с Вами</label>
+
+              <textarea id="form-message" name="message" placeholder="Сообщение"></textarea>
+
             
             <div class=" btn-brown-footer">
-              <input class="order-btn" type="submit" value="Записаться на прием" style="width: 100%; height: 91px;"/>
-              <!-- <button class="order-btn" style="width: 100%; height: 91px;" id="submit">Записаться на прием</button>  -->
+              <button class="order-btn" style="width: 100%; height: 91px;" id="submit">Записаться на прием</button> 
             </div>
+
           </form>
         </div>
       </div>
