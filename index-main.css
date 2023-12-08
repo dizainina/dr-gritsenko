@@ -1699,6 +1699,9 @@ iframe{
     .container {
         width: 840px;
     }
+    main{
+        margin-top: 10%;
+    }
     .grid{
         grid-template-columns: repeat(2, 48%);
     }
@@ -1733,6 +1736,12 @@ iframe{
     }
     .popup-text{
         font-size: 34px;
+    }
+    .slider {
+        height: 77%;
+    }
+    .item {
+        height: 93%;
     }
 }
 /* ------------------------------ */
@@ -1829,6 +1838,17 @@ iframe{
     .slider-container{
         background-size: 75%;
         }
+}
+/* ------------------------------ */
+
+@media (max-width: 750px){
+
+    .slider {
+        height: 82%;
+    }
+    .item {
+        height: 80%;
+    }
 }
 /* ------------------------------ */
 @media (max-width: 690px){
