@@ -185,17 +185,6 @@ h1{
   width: 100%;
 }
 
-
-/* .show-more a:hover  {
-  opacity: 0.5;
-}
-.more-comments-none{
-  display: none;
-}
-.margin-x{
-  margin: 0 1%;
-}  */
-
 /* ----Модальное окно--- */
 .modal-post{
   height: 100vh;
@@ -369,17 +358,15 @@ h1{
   .titleMain {
     height: 4rem;
   }
+  body, html{
+    overflow-x: hidden;
+    width: 100%;
+}
 }
 @media (max-width: 1024px){
   .App, .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 1024px;
   }
-  body, html{
-    overflow-x: hidden;
-}
-  /* .App2{
-    padding: 0 5%;
-  } */
   .commentsPopup-navigation{
     justify-content: center !important;
   }
