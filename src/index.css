@@ -9,7 +9,7 @@
   overflow: hidden;
   }
 body, html{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     width: 100%;
 }
 .App {
@@ -54,7 +54,7 @@ h1{
   padding: 1rem;
   margin: 1%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
   /* width: 90%; */
 }
 .commentsPopup-navigation{
