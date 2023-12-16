@@ -11,7 +11,7 @@
 
     {"id":1, 
     "titleMain":"ПОСТ-ЗНАКОМСТВО", 
-    "date":"14 МАЯ 2022",
+    "date":"21 МАЯ 2022",
     "imagePath":"./images/post_acquaintance.jpg",
     "imagePathSmall":"./images/post_acquaintance-small.jpg",
 
@@ -22,7 +22,7 @@
 
     {"id":2, 
     "titleMain":"ПРИЁМ У ВРАЧА-КИНЕЗИОЛОГА", 
-    "date":"14 МАЯ 2022",
+    "date":"10 июня 2022",
     "imagePath":"./images/appointment_with_a_kinesiologist.jpg",
     "imagePathSmall":"./images/appointment_with_a_kinesiologist-small.jpg",
 
@@ -32,7 +32,7 @@
 
     {"id":3, 
     "titleMain":"КТО МОИ ПАЦИЕНТЫ?", 
-    "date":"14 МАЯ 2022",
+    "date":"09 июля 2022",
     "imagePath":"./images/who_are_my_patients.jpg",
     "imagePathSmall":"./images/who_are_my_patients-small.jpg",
 
@@ -42,7 +42,7 @@
 
     {"id":4, 
     "titleMain":"ПРЕВЕНТИВНАЯ МЕДИЦИНА", 
-    "date":"14 МАЯ 2022",
+    "date":"19 МАЯ 2023",
     "imagePath":"./images/preventive_medicine.jpg",
     "imagePathSmall":"./images/preventive_medicine-small.jpg",
 
@@ -52,7 +52,7 @@
 
     {"id":5, 
     "titleMain":"ПРЕИМУЩЕСТВА ПРИКЛАДНОЙ КИНЕЗИОЛОГИИ", 
-    "date":"14 МАЯ 2022",
+    "date":"02 сентября 2022",
     "imagePath":"./images/advantages_of_applied_kinesiology.jpg",
     "imagePathSmall":"./images/advantages_of_applied_kinesiology-small.jpg",
 
@@ -62,7 +62,7 @@
 
     {"id":6, 
     "titleMain":"ЗАЧЕМ НУЖНА МАНУАЛЬНАЯ ТЕРАПИЯ?", 
-    "date":"14 МАЯ 2022",
+    "date":"13 октября 2022",
     "imagePath":"./images/manual_therapy.jpg",
     "imagePathSmall":"./images/manual_therapy-small.jpg",
 
@@ -72,7 +72,7 @@
 
     {"id":7, 
     "titleMain":"САХАРНЫЙ ДИАБЕТ ВТОРОГО ТИПА", 
-    "date":"14 МАЯ 2022",
+    "date":"21 января 2023",
     "imagePath":"./images/diabetes_mellitus.jpg",
     "imagePathSmall":"./images/diabetes_mellitus-small.jpg",
 
@@ -82,7 +82,7 @@
 
     {"id":8, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - ГОМЕОПАТИЯ", 
-    "date":"14 МАЯ 2022",
+    "date":"16 января 2023",
     "imagePath":"./images/homeopathy.jpg",
     "imagePathSmall":"./images/homeopathy-small.jpg",
 
@@ -93,7 +93,7 @@
 
     {"id":9, 
     "titleMain":"КАК КИНЕЗИОЛОГ РАБОТАЕТ С ЭМОЦИЯМИ?", 
-    "date":"14 МАЯ 2022",
+    "date":"11 февраля 2023",
     "imagePath":"./images/working_with_emotions.jpg",
     "imagePathSmall":"./images/working_with_emotions-small.jpg",
 
@@ -104,7 +104,7 @@
 
     {"id":10, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - ИГЛОУКАЛЫВАНИЕ", 
-    "date":"14 МАЯ 2022",
+    "date":"22 марта 2023",
     "imagePath":"./images/acupuncture.jpg",
     "imagePathSmall":"./images/acupuncture-small.jpg",
     "title": "Это волшебный пульт управления всеми функциями нашего организма!",
@@ -113,7 +113,7 @@
 
     {"id":11, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - FDM-терапия", 
-    "date":"14 МАЯ 2022",
+    "date":"20 МАЯ 2023",
     "imagePath":"./images/fdm_therapy.jpg",
     "imagePathSmall":"./images/fdm_therapy-small.jpg",
 
@@ -123,7 +123,7 @@
 
     {"id":12, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - ВИСЦЕРАЛЬНАЯ ТЕРАПИЯ", 
-    "date":"14 МАЯ 2022",
+    "date":"29 МАЯ 2023",
     "imagePath":"./images/visceral_therapy.jpg",
     "imagePathSmall":"./images/visceral_therapy-small.jpg",
 
@@ -133,7 +133,7 @@
 
     {"id":13, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - ВИЗУАЛЬНАЯ ДИАГНОСТИКА", 
-    "date":"14 МАЯ 2022",
+    "date":"04 июня 2023",
     "imagePath":"./images/visual_diagnostics.jpg",
     "imagePathSmall":"./images/visual_diagnostics-small.jpg",
 
@@ -143,7 +143,7 @@
 
     {"id":14, 
     "titleMain":"ИНСТРУМЕНТЫ КИНЕЗИОЛОГА - КРАНИОСАКРАЛЬНАЯ ТЕРАПИЯ", 
-    "date":"14 МАЯ 2022",
+    "date":"10 июля 2023",
     "imagePath":"./images/craniosacral_ therapy.jpg",
     "imagePathSmall":"./images/craniosacral_ therapy-small.jpg",
 
