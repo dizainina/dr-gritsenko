@@ -21,7 +21,7 @@ body{
     position: relative;
 
 }
-body._lock{
+body ._lock{
     overflow: hidden;
 }
 main{
@@ -39,7 +39,7 @@ main{
     display: flex;
     flex-direction: row;
     /* padding: 0 2%; */
-    padding: 0 5%;
+    /* padding: 0 5%; */
 
 
 }
@@ -49,9 +49,6 @@ main{
     transition: all 0.8s ease 0s;
 }
 
-/* .none{
-    display: none;
-} */
 
 .btn-brown_open-popup_none{
     display: none;
@@ -643,6 +640,7 @@ img.rot {
 .form-body{
     height: 75%;
     display: flex;
+    width: 100%;
 }
 .popup {
     background: rgba(255, 255, 255, 1);
@@ -653,7 +651,7 @@ img.rot {
     transform: translate(-50%, -50%);
     padding: 2rem;
     width: 600px;
-    height: 91vh;
+    height: 71vh;
 }
 
 .popup.active { 
@@ -679,12 +677,14 @@ img.rot {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 2rem;
+    width: 100%;
+
 }
 input, textarea, #submit{
     width: 100%;
     border: none;
     border-bottom: 1px solid #bebebe86;
-    height: 3rem;
+    height: 2rem !important;
 }
 input, textarea{
     font-size: larger;
@@ -1511,6 +1511,17 @@ iframe{
 }
 
 /* ---------------АДАПАТИВ--------------- */
+@media (min-width: 2200px){
+    .popup {
+        width: 25vw !important;
+        height: 64vh;
+    }
+}
+@media (max-width: 1400px){
+    .popup {
+        height: 90vh;
+    }
+}
 @media (max-width: 1200px){
     .popup {
         width: 485px;
@@ -1632,9 +1643,6 @@ iframe{
     .container {
         width: 1024px;
         /* padding: 24px; */
-    }
-    .header{
-        /* height: 780px; */
     }
     .container-col{
         width: 98%;
@@ -1780,9 +1788,7 @@ iframe{
     .container {
         width: 790px;
     }
-    .header{
-        /* height: 720px; */
-    }
+
     .container-footer{
         display: flex;
         flex-direction: column;
@@ -1981,23 +1987,16 @@ iframe{
         height: 100%;
         margin: 0 auto;
     }
-    .slider {
-        /* height: 431px; */
-    }
     .small-text{
         font-size: 35px;
     }
     .popup {
         width: 367px;
-        /* height: 538px; */
     }
     .popup-text{
         font-size: 30px;
     }
 
-    /* .adv h1{
-        font-size: 24px;
-    } */
 }
 /* ------------------------------ */
 @media (max-width: 490px){

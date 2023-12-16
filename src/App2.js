@@ -13,6 +13,7 @@ export default function App2() {
     let itemsForModal;
 
     
+
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     
@@ -50,7 +51,7 @@ export default function App2() {
     postIdOnclick = e.currentTarget.dataset.id;
     itemsForModal = currentItems.filter((item) => item.id == postIdOnclick);
     setFilteredData(itemsForModal);
-    console.log(itemsForModal);
+    // console.log(itemsForModal);
     setModalActive(true);
   };
 

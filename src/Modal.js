@@ -6,6 +6,7 @@ import './index.css';
 // делаем этот компонент ПЕРЕИСПОЛЬЗУЕМЫМ children
 
 
+
 const Modal = ({active, setActive, children, id}) => {
     return (
         // вешаем обработчик, который будет менять состояние active на false (при нажатии на затемненную облать будет закрываться)

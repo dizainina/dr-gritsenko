@@ -16,6 +16,7 @@ export default function App() {
 // функция для смены страницы
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  
   return (
   
     <div className="App">
