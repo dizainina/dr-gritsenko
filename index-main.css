@@ -684,10 +684,14 @@ input, textarea, #submit{
     width: 100%;
     border: none;
     border-bottom: 1px solid #bebebe86;
-    height: 2rem !important;
+}
+#submit{
+    height: 6rem !important;
 }
 input, textarea{
     font-size: larger;
+    height: 2rem !important;
+
 }
 textarea{
     padding-top: 0.5rem;
@@ -714,7 +718,7 @@ label{
     margin-top: 1rem;
 }
 .modal_container .form .order-btn{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     background: #cab8aba1;
     pointer-events: none;
     border-radius: 0;
@@ -1514,18 +1518,18 @@ iframe{
 @media (min-width: 2200px){
     .popup {
         width: 25vw !important;
-        height: 64vh;
+        height: 77vh;
     }
 }
 @media (max-width: 1400px){
     .popup {
-        height: 90vh;
+        height: 76vh;
     }
 }
 @media (max-width: 1200px){
     .popup {
         width: 485px;
-        height: 88vh;
+        height: 73vh;
     }
     .popup-text{
         font-size: 40px;
