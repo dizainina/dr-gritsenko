@@ -52,7 +52,7 @@ export default function App2() {
     setFilteredData(itemsForModal);
     // console.log(itemsForModal);
     setModalActive(true);
-    document.body.style.overflowX = 'hidden';
+    // document.body.style.overflowX = 'hidden';
     document.body.style.overflowY = 'hidden';
 
     document.body.style.paddingRight = '15px';
