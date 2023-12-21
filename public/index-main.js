@@ -157,6 +157,7 @@ setInterval(plusSlide, 4000);
 
 
 // ******************ПОП-АП Записаться на консультацию**********************
+let body = document.querySelector ('body');
 
 let popupBg = document.querySelector('.popup__bg'); // Фон попап окна
 let popup = document.querySelector('.popup'); // Само окно
@@ -270,21 +271,18 @@ async function sendEmailTelegram(event) {
 openPopupButtons.forEach((button) => { // Перебираем все кнопки
   button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
         e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-        // goodByText.style.display = 'none';
-        // if(orderСonsultationText.style.display = 'block'){
                 popupBg.classList.add('active'); // Добавляем класс 'active' для фона
                 popup.classList.add('active'); // И для самого окна
-        // }else if(orderСonsultationText.style.display = 'none'){
-        //         popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-        //         popup.classList.add('active'); // И для самого окна
-        //         orderСonsultationText.style.display = 'block';
-        // }
+                body.classList.add('modal-open');
+
         })
 });
 // закрытие поп-апа с крестика
 closePopupButton.addEventListener('click',() => { // Вешаем обработчик на крестик
         popupBg.classList.remove('active'); // Убираем активный класс с фона
         popup.classList.remove('active'); // И с окна
+        body.classList.remove('modal-open'); // включаем прокрутку
+
 });
 
 // закрытие поп-апа с фона
@@ -292,6 +290,8 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
         if(e.target === popupBg) { // Если цель клика - фон, то:
                 popupBg.classList.remove('active'); // Убираем активный класс с фона
                 popup.classList.remove('active'); // И с окна
+                body.classList.remove('modal-open'); // включаем прокрутку
+
         }
 });
 
@@ -299,7 +299,6 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
 // *************************ПОП-АП Отзывы**********************************
 let openCommentsPopupBtn = document.querySelectorAll('.openCommentsPopupBtn'); // Кнопки для показа окна
 let closeCommentsPopupBtn = document.querySelector('.closeCommentsPopupBtn'); // Кнопки для закрытия окна
-let body = document.querySelector ('body');
 let containerCommentsPopup = document.querySelector('.container-commentsPopup'); // Само окно
 let commentsPopup = document.querySelector('.commentsPopup'); // Фон попап окна
 
@@ -309,7 +308,7 @@ openCommentsPopupBtn.forEach((button) => { // Перебираем все кно
               e.preventDefault(); // Предотвращаем дефолтное поведение браузера
               containerCommentsPopup.classList.add('active'); // И с окна
               commentsPopup.classList.add('active'); // И с окна
-              body.classList.add('modal-open'); // ираем прокрутку основного окна
+              body.classList.add('modal-open'); // убираем прокрутку основного окна
         });
 });
 
@@ -468,13 +467,13 @@ var diplomSlides = new Swiper('.diplom-slides', {
         },
         breakpoints:{
                 780: {
-                        slidesPerView: 2,
+                        slidesPerView: 1.5,
                         spaceBetween: 10,
                 }
         },
         breakpoints:{
                 1098: {
-                        slidesPerView: 3,
+                        slidesPerView: 2,
                         spaceBetween: 20,
                 }
         },

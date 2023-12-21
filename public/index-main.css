@@ -21,8 +21,10 @@ body{
     position: relative;
 
 }
-body ._lock{
+
+body ._lock, .modal-open{
     overflow: hidden;
+    /* position: fixed; */
 }
 main{
     background: rgba(255, 255, 255, 1);
@@ -464,6 +466,7 @@ img.rot {
     .nav ul li{
         display: block;
         height:38px;
+        margin-left: -15px;
     }
 
     .nav ul {
@@ -587,7 +590,7 @@ img.rot {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 608px) {
     .item {
         flex-direction: column;
     }
@@ -638,7 +641,7 @@ img.rot {
     justify-content: space-between;
 }
 .form-body{
-    height: 75%;
+    height: 80%;
     display: flex;
     width: 100%;
 }
@@ -676,8 +679,8 @@ img.rot {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 2rem;
     width: 100%;
+    /* height: 340px; */
 
 }
 input, textarea, #submit{
@@ -1067,10 +1070,10 @@ h1{
     opacity: 0;
     z-index: -1;
     height: 100vh;
-    width: 1200px;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    padding: 0 2%;
+    /* overflow-y: scroll; */
 }
 .container-commentsPopup.active {
     transition: 0.5s all;
@@ -1097,9 +1100,6 @@ h1{
 
 /* *************ПОПАП Публикации******************* */
 .postsPopup{
-    /* width: 100%; */
-    /* background-image: url(/lending_gritsenko/images/bg-popup-comments.svg); */
-    /* height: auto; */
     display: flex;
     justify-content: center;
     position: fixed;
@@ -1113,7 +1113,6 @@ h1{
     background-color: white;
     overflow: hidden;
     overflow-y: auto;
-    /* для сенсорных экранов прокрутка чтобы работала именно на этом б*/
     -webkit-overflow-scrolling: touch;
     padding: 0;
     margin: 0;
@@ -1135,11 +1134,8 @@ h1{
     opacity: 0;
     z-index: -1;
     height: 100vh;
-    /* width: 1200px; */
-    /* max-width: 100%; */
     width: 100%;
     transition: 0.5s all;
-
 }
 .container-postsPopup {
     transition: 0.5s all;
@@ -1523,15 +1519,23 @@ iframe{
         height: 77vh;
     }
 }
-@media (max-width: 1400px){
+/* @media (max-width: 1400px){
     .popup {
         height: 76vh;
+    }
+} */
+@media (min-width: 1200px){
+    .popup {
+        height: 72vh;
+    }
+    .form{
+        height: 100%;
     }
 }
 @media (max-width: 1200px){
     .popup {
         width: 485px;
-        height: 73vh;
+        height: 75vh;
     }
     .popup-text{
         font-size: 40px;
@@ -1556,6 +1560,12 @@ iframe{
 @media (max-width: 1100px){
     .container {
         width: 1100px;
+    }
+    /* .container-commentsPopup{
+        width: 90%;
+    } */
+    .commentsFlex{
+        width: 100%;
     }
 
     .experience, .advantages, .comment, .certificate,  .posts, .container-footer, .post-item, .post-item-image img, .adv{
@@ -1594,7 +1604,7 @@ iframe{
     }
     .popup {
         width: 490px;
-        /* height: 602px; */
+        /* height: 80vh; */
     }
     .item_col {
         width: 85%;
@@ -1640,9 +1650,10 @@ iframe{
     ::-webkit-scrollbar-thumb:hover {
         background: #D5A789; /* ползунок меняет цвет при наведении */
     }
-    .popup {
-        height: 76vh;
+    .container-commentsPopup{
+        overflow-y: scroll;
     }
+
 } 
 /* ------------------------------ */
 @media (max-width: 1024px){
@@ -1667,7 +1678,7 @@ iframe{
     }
     .popup {
         width: 439px;
-        /* height: 575px; */
+        /* height: 80vh; */
     }
     .popup-text{
         font-size: 36px;
@@ -1752,9 +1763,9 @@ iframe{
     .row{
         width: 100%;
     }
-    .postsPopup{
+    /* .postsPopup{
         overflow:auto;
-    }
+    } */
     .popup {
         width: 397px;
         /* height: 557px; */
@@ -1874,27 +1885,128 @@ iframe{
     }
 }
 /* ------------------------------ */
-@media (max-width: 690px){
+@media (max-width: 690px) and (max-height: 620px){
     .container {
         width: 690px;
     }
     input, textarea, #submit{
-        height: 2rem;
+        height: 5rem !important;
     }
-    .popup{
-    height: 69vh;
+    .form{
+        height: 360px;
+    
+    }
+    /* .popup{
+    height: 90vh;
 
-    }
+    } */
     .slider-container{
         background-size: 71%;
         }
 }
 /* ------------------------------ */
-@media (max-width: 608px){
-    .container {
-        width: 608px;
+@media (max-width: 608px) and (max-height: 620px){
+    .item_col h1{
+        font-size: 36px;
+    }
+    .popup-text{
+        font-size: 27px;
+    }
+    #submit{
+    padding: 0 1%;   
+    height: 3rem !important;
+
+}
+    .form > .btn-brown-footer {
+    margin-top: 5%;
 
     }
+    #form-message{
+        height: 3rem !important;
+    }
+}
+/* @media (max-width: 608px) and (max-height: 577px){
+    .form-body{
+        display:none
+    } 
+    .popup:after{
+        content:'Переверните устройство в вертикальный режим или откройте сайт с компьютера.';
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        padding-top: 10%;
+        background:#fff;
+        z-index:999; 
+        text-align:center; 
+        width:80%; 
+        height:auto;
+    }
+} */
+@media (max-width: 608px) or (max-height: 630px){
+    .form-body{
+        overflow-y: scroll;
+    } 
+
+}
+
+@media (max-width: 608px) and (max-height: 490px){
+    .item_col h1{
+        font-size: 32px !important;
+    }
+}
+@media (max-width: 608px) and (max-height: 411px){
+    .item_col h1{
+        font-size: 25px !important;
+    }
+    .item_col p{
+        font-size: 10px !important;
+    }
+}
+@media (max-width: 608px) and (max-height: 311px){
+
+    .item_col p{
+        display: none;
+    }
+}
+@media (max-height: 560px){
+
+    .slider-container{
+    height: 83vh;
+
+    }
+}
+@media (min-width: 608px) and (max-height: 630px){
+    .buttonsArrowWithPoint{
+        left: 70%;
+    }
+}
+@media (max-height: 425px){
+    .item_col p{
+        display: none;
+    }
+    .buttonsArrowWithPoint {
+        bottom: 30px;
+    }
+    .mandala{
+        display: none;
+    }
+}
+/* @media (max-width: 608px) or (max-height: 645px){
+    .next img{
+        width: 70px;
+    }
+    .item_col h1{
+        font-size: 40px;
+    }
+} */
+@media (max-width: 608px) or ((max-width: 730px) and (max-height: 425px)){
+    .container {
+        width: 608px;
+    }
+
     .slider-container{
         width: 100%;
         height: 100%;
@@ -1907,10 +2019,11 @@ iframe{
     .slider-container{
     background-size: 73%;
     background-position-y: 16%;
+    height: 92vh;
 
     }
     .item_col h1{
-        font-size: 45px;
+        font-size: 35px;
     }
     .item_col p{
         font-size: 15px;
@@ -1918,23 +2031,26 @@ iframe{
     .btn-brown_open-popup_none{
         display: block;
         width: 100%;
-        margin-top: -9rem;
+        margin-top: -5rem;
         z-index: 1;
     }
     .arrow_mobile {
         display: flex;
-        margin-top: -28rem;
+        margin-top: -20rem;
         width: 97%;
         justify-content: space-between;
+        /* margin-left: -28rem; */
     }
     .buttonsArrowWithPoint{
-        width: 100%;
-        left: 0;
-        justify-content: center;
+        width: 96%;
+        left: 2%;
+        /* justify-content: center; */
     }
-    .point-next, .next, .prev {
+    .next, .point {
         display: none;
     }
+
+
     .img-close-popup {
         right: 1rem;
         font-size: 20px;
@@ -2087,7 +2203,7 @@ iframe{
     .order-btn{
         margin-top: 0.5rem !important;
         height: 77px !important;
-        padding-top: 3rem !important;
+        padding-top: 1rem !important;
     }
     .closeCommentsPopupBtn{
         left: 88%;
@@ -2097,7 +2213,16 @@ iframe{
     }
 }
 /* ------------------------------ */
-@media (max-width: 380px){
+@media (max-width: 380px) or (max-height: 600px){
+    .item_col h1{
+        font-size: 30px;
+    }
+    .item_col p{
+        font-size: 15px;
+    }
+
+}
+@media (max-width: 380px)  and (max-height: 650px){
     .container {
         width: 380px;
     padding: 0 14%;
@@ -2113,12 +2238,7 @@ iframe{
         background-size: 170%;
         background-position-x: 84%;
     }
-    .item_col h1{
-        font-size: 30px;
-    }
-    .item_col p{
-        font-size: 15px;
-    }
+
     .slider-container{
         padding: 0;
     }
@@ -2157,6 +2277,9 @@ iframe{
     }
     .price-big-text {
         width: 300px;
+    }
+    .item_col p {
+        display: none;
     }
 }
 @media (max-width: 340px){
@@ -2202,4 +2325,5 @@ iframe{
     .text-white-small{
         font-size: 13px;
     }
+
 }

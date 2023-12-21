@@ -45,7 +45,6 @@ export default function App2() {
   const [filteredData, setFilteredData] = useState([]);
   //переменная для id
   let postIdOnclick;
-
   //  функция для открытия публикации в модальном окне и получение id поста
   const openCard = (e) => {
     postIdOnclick = e.currentTarget.dataset.id;
@@ -53,6 +52,14 @@ export default function App2() {
     setFilteredData(itemsForModal);
     // console.log(itemsForModal);
     setModalActive(true);
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '15px';
+  };
+
+  const closeCard = (e) => {
+    setModalActive(false);
+    document.body.style.overflow = 'unset';
+    document.body.style.paddingRight = '0px';
   };
 
     return (
@@ -68,7 +75,7 @@ export default function App2() {
             
                 <p className="titleMain">{item.titleMain}</p>
                 <p className="title">{item.title.slice(0,100)}...</p>
-                <p className="date">{item.date}</p>
+                <p className="date uppercase">{item.date}</p>
             </div>
             ))}
         </div>
@@ -88,7 +95,7 @@ export default function App2() {
         
         <Modal active={modalActive} setActive={setModalActive} >
           <div className="postsPopup">
-            <div className="closePostsPopup" onClick={() => setModalActive(false)}>
+            <div className="closePostsPopup" onClick={closeCard}>
               <span className="closePostsPopup-img"><img src="images/ei_close_black.svg" alt="" /></span>
             </div>
 
@@ -98,15 +105,16 @@ export default function App2() {
                 <div className="head-post">
                   <div className="title-head-post">
                     <h1 className="titleMainHead">{item.titleMain}</h1>
-                    <p className="date" style={{fontSize: 16 + "px"}}>{item.date}</p>
+                    <p className="date uppercase" style={{fontSize: 16 + "px"}}>{item.date}</p>
                   </div>
                   <div className="repost">
-                      <p className="date" style={{fontSize: 14 + "px", marginRight: 15 + "px"}}>Поделиться статьей:</p>
+                      <p className="date " style={{fontSize: 14 + "px", marginRight: 15 + "px"}}>Поделиться статьей:</p>
                       <div className="repost-icon">
-                        <a href="https://vk.com/share.php?url=https://dizainina.github.io/dr-gritsenko/" target="_blank" rel="noreferrer"><img src="images/vk.png" alt=""/></a>
-                        <a href="https://connect.ok.ru/offer?url=https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/ok.png" alt="" /></a>
-                        <a href="http://twitter.com/share?https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/twitter.png" alt="" /></a>
-                        <a href="https://telegram.me/share/url?url=https://dizainina.github.io/dr-gritsenko/"  target="_blank" rel="noreferrer"><img src="images/telegramm.png" alt="" /></a>
+                        <a href="https://vk.com/share.php?url=https://www.dr-gritsenko.com" target="_blank" rel="noreferrer"><img src="images/vk.png" alt=""/></a>
+
+                        <a href="https://connect.ok.ru/offer?url=https://www.dr-gritsenko.com&title=DR.GRITSENKO&imageUrl=images/mandala.png"  target="_blank" rel="noreferrer"><img src="images/ok.png" alt="" /></a>
+                        <a href="http://twitter.com/share?https://www.dr-gritsenko.com"  target="_blank" rel="noreferrer"><img src="images/twitter.png" alt="" /></a>
+                        <a href="https://telegram.me/share/url?url=https://www.dr-gritsenko.com"  target="_blank" rel="noreferrer"><img src="images/telegramm.png" alt="" /></a>
                       </div>
                   </div>
                 </div>

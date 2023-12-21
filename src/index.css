@@ -5,12 +5,12 @@
   font-family: "Plain", sans-serif;
 
 }
-/* .modal-open {
-  overflow: hidden;
-  } */
+
 body, html{
-    /* overflow-x: hidden; */
     width: 100%;
+}
+body ._lock, .modal-open{
+  overflow: hidden;
 }
 .App {
   width: 100%;
@@ -42,6 +42,7 @@ body, html{
 
 h1{
   margin: 2.5rem 0;
+  /* padding-left: 3%; */
 }
 .commentsPopup-item li:nth-child(odd){
   margin: 0 1% 2% 0;
@@ -54,14 +55,14 @@ h1{
   padding: 1rem;
   margin: 1%;
   height: 100%;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* width: 90%; */
 }
 .commentsPopup-navigation{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .commentsPopup-navigation a{
   opacity: 0.5;
@@ -71,6 +72,8 @@ h1{
 }
 .pages{
   display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 .page{
   width: 4rem;
@@ -159,6 +162,9 @@ h1{
   opacity: 0.5;
   font-size: 12px;
 }
+.uppercase{
+  text-transform: uppercase;
+}
 .show-more-button, .back-button{
   margin: 5% auto;
   /* width: 100%; */
@@ -195,7 +201,7 @@ h1{
   justify-content: center;
   opacity: 0;
   transition: 0.5s;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* чтобы можно было работать с текстом на странице */
   pointer-events: none;
 
@@ -213,7 +219,8 @@ h1{
   height: 100vh;
   transform: scale(0.5);
   transition: 0.4s all;
-  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 }
 
 /* анимируем модальное окно */
@@ -223,14 +230,15 @@ h1{
 }
 .container_postsPopup{
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 
 }
 .postsPopup{
   width: 100%;
   color: rgb(34, 34, 34);
   opacity: 1;
+  
 }
 
 .closePostsPopup-img{
@@ -255,7 +263,7 @@ h1{
   justify-content: space-between;
 }
 .main-post{
-  width: 1000px;
+  width: 100%;
   display: flex;
   margin: 80px auto 50px;
   flex-direction: column;
@@ -275,9 +283,8 @@ h1{
   flex-direction: column;
 }
 .head-img{
-  /* height: 700px; */
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .head-img img{
   width: 100%;
@@ -292,10 +299,7 @@ h1{
 
 }
 .post-item-img{
-  /* height: 100%; */
   width: 100%;
-
-  /* object-position: 0 -100px; */
 }
 
 .item-message{
@@ -320,8 +324,7 @@ h1{
   font-size: 40px;
   line-height: 1.2;
   font-weight: normal;
-  margin-bottom: 50px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   width: 80%;
 }
 
@@ -346,7 +349,7 @@ h1{
 /* ---------------------АДАПТИВ-------------- */
 @media (max-width: 1100px){
 
-  .App, .main-post, .modal-container_postsPopup, .div-for-quote {
+  .main-post, .modal-container_postsPopup, .div-for-quote {
       width: 1100px;
   }
   .post-item{
@@ -358,13 +361,13 @@ h1{
   .titleMain {
     height: 4rem;
   }
-  body, html{
+  /* body, html{
     overflow-x: hidden;
     width: 100%;
-}
+} */
 }
 @media (max-width: 1024px){
-  .App, .modal-container_postsPopup, .main-post, .div-for-quote {
+  .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 1024px;
   }
   .commentsPopup-navigation{
@@ -379,20 +382,14 @@ h1{
   }
   .post-item{
     width: 49%;
-
-    /* text-align: center; */
   }
   .div-for-img-small-post{
     height: 344px;
     width: 100%;
   
   }
-
-  /* .commentsPopup-item h1{
-    margin-left: 4%;
-  } */
   .pages{
-    margin-bottom: 5%;
+    margin: 3% auto;
   }
   .head-post{
     flex-direction: column;
@@ -411,15 +408,18 @@ h1{
 
 }
 @media (max-width: 980px){
-  .App, .modal-container_postsPopup, .main-post, .div-for-quote {
+  .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 980px;
   }
   .comm{
     width: 93%;
   }
+  .commentsPopup-navigation{
+    width: 90%;
+  }
 }
 @media (max-width: 900px){
-  .App, .modal-container_postsPopup, .main-post, .div-for-quote {
+  .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 900px;
   }
   .img-quotation-marks{
@@ -428,7 +428,7 @@ h1{
   }
 }
 @media (max-width: 840px){
-  .App, .modal-container_postsPopup, .main-post, .div-for-quote {
+  .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 840px;
   }
   .comm{
@@ -443,9 +443,8 @@ h1{
 }
 .container_postsPopup{
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 }
 
 }
@@ -469,11 +468,10 @@ h1{
     }
     .post-item{
       width: 100%;
+      margin-bottom: 5%;
     }
     .div-for-img-small-post{
-      /* height: 344px; */
       width: 100%;
-    
     }
     .post-item-img{
       width: 100%;
@@ -485,9 +483,7 @@ h1{
     .quote-post {
       flex-direction: column-reverse;
       position: relative;
-      /* width: 100%; */
     }
-
     .margin-top-post {
       margin-top: 12%;
     }
@@ -513,7 +509,7 @@ h1{
   .App, .modal-container_postsPopup, .main-post, .div-for-quote {
         width: 590px;
     }
-} 
+  }
 @media (max-width: 500px){
   .App, .modal-container_postsPopup, .main-post, .div-for-quote{
       width: 500px;
