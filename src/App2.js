@@ -52,13 +52,15 @@ export default function App2() {
     setFilteredData(itemsForModal);
     // console.log(itemsForModal);
     setModalActive(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'hidden';
+
     document.body.style.paddingRight = '15px';
   };
 
   const closeCard = (e) => {
     setModalActive(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflowY = 'unset';
     document.body.style.paddingRight = '0px';
   };
 
