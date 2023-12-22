@@ -1906,7 +1906,7 @@ iframe{
 
 @media (max-height: 636px){
     .form {
-        height: 340px !important;
+        height: 380px !important;
     }
     .col-about {
         padding-left: 20px;

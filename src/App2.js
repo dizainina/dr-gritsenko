@@ -55,13 +55,13 @@ export default function App2() {
     // document.body.style.overflowX = 'hidden';
     document.body.style.overflowY = 'hidden';
 
-    document.body.style.paddingRight = '15px';
+    // document.body.style.paddingRight = '15px';
   };
 
   const closeCard = (e) => {
     setModalActive(false);
-    document.body.style.overflowY = 'unset';
-    document.body.style.paddingRight = '0px';
+    document.body.style.overflowY = 'auto';
+    // document.body.style.paddingRight = '0px';
   };
 
     return (
