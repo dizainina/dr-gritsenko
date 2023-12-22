@@ -8,8 +8,10 @@
 
 body, html{
     width: 100%;
+  /* overflow-x: hidden; */
+
 }
-body ._lock, .modal-open{
+body ._lock{
   overflow: hidden;
 }
 .App {
