@@ -50,19 +50,18 @@ if(closeLinks.length > 0) {
 // When user clicks button, open Modal
 btn.onclick = function() {
    modal.style.display = "block";
-   const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
-                // const body = document.body;
-                body.style.position = 'fixed';
-                body.style.top = `-${scrollY}`;
+//    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+//                 body.style.position = 'fixed';
+//                 body.style.top = `-${scrollY}`;
    };
 
 // When user clicks Close (x), close Modal
 span.onclick = function() {
    modal.style.display = "none";
-   const scrollY = body.style.top;
-        body.style.position = '';
-        body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+//    const scrollY = body.style.top;
+//         body.style.position = '';
+//         body.style.top = '';
+//         window.scrollTo(0, parseInt(scrollY || '0') * -1);
    };
 
 
@@ -70,6 +69,10 @@ span.onclick = function() {
  window.onclick = function(event) {
     if (event.target == modal) {
        modal.style.display = "none";
+//        const scrollY = body.style.top;
+//        body.style.position = '';
+//        body.style.top = '';
+//        window.scrollTo(0, parseInt(scrollY || '0') * -1);
        }
     }
 
