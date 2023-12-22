@@ -27,8 +27,6 @@ if(menuLinks.length > 0) {
 }
 // ************************бургер************************************************
 
-
-
 // Get Modal
 var modal = document.getElementById('myModal');
     
@@ -52,11 +50,19 @@ if(closeLinks.length > 0) {
 // When user clicks button, open Modal
 btn.onclick = function() {
    modal.style.display = "block";
+   const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+                // const body = document.body;
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollY}`;
    };
 
 // When user clicks Close (x), close Modal
 span.onclick = function() {
    modal.style.display = "none";
+   const scrollY = body.style.top;
+        body.style.position = '';
+        body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
    };
 
 
@@ -273,10 +279,8 @@ openPopupButtons.forEach((button) => { // Перебираем все кнопк
         e.preventDefault(); // Предотвращаем дефолтное поведение браузера
                 popupBg.classList.add('active'); // Добавляем класс 'active' для фона
                 popup.classList.add('active'); // И для самого окна
-                body.classList.add('modal-open');
-                // document.getElementById('dialog').classList.add('show')
+
                 const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
-                // const body = document.body;
                 body.style.position = 'fixed';
                 body.style.top = `-${scrollY}`;
 
@@ -286,13 +290,11 @@ openPopupButtons.forEach((button) => { // Перебираем все кнопк
 closePopupButton.addEventListener('click',() => { // Вешаем обработчик на крестик
         popupBg.classList.remove('active'); // Убираем активный класс с фона
         popup.classList.remove('active'); // И с окна
-        body.classList.remove('modal-open'); // включаем прокрутку
-        // const body = document.body;
+
         const scrollY = body.style.top;
         body.style.position = '';
         body.style.top = '';
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        // document.getElementById('dialog').classList.remove('show');
 
 });
 
@@ -301,12 +303,11 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
         if(e.target === popupBg) { // Если цель клика - фон, то:
                 popupBg.classList.remove('active'); // Убираем активный класс с фона
                 popup.classList.remove('active'); // И с окна
-                body.classList.remove('modal-open'); // включаем прокрутку
+
                 const scrollY = body.style.top;
                 body.style.position = '';
                 body.style.top = '';
                 window.scrollTo(0, parseInt(scrollY || '0') * -1);
-                // document.getElementById('dialog').classList.remove('show');
 
         }
 });
@@ -329,7 +330,11 @@ openCommentsPopupBtn.forEach((button) => { // Перебираем все кно
               e.preventDefault(); // Предотвращаем дефолтное поведение браузера
               containerCommentsPopup.classList.add('active'); // И с окна
               commentsPopup.classList.add('active'); // И с окна
-              body.classList.add('modal-open'); // убираем прокрутку основного окна
+
+              const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+                // const body = document.body;
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollY}`;
         });
 });
 
@@ -337,29 +342,14 @@ openCommentsPopupBtn.forEach((button) => { // Перебираем все кно
 closeCommentsPopupBtn.addEventListener('click',() => { // Вешаем обработчик на крестик
         commentsPopup.classList.remove('active'); // И с окна
         containerCommentsPopup.classList.remove('active'); // И с окна
-        body.classList.remove('modal-open'); // включаем прокрутку
+
+        const scrollY = body.style.top;
+        body.style.position = '';
+        body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
 });
 
-// // *************************ПОП-АП Публикации**********************************
-// let openPostsPopupBtn = document.querySelector('.openPostsPopupBtn'); // Кнопки для показа окна
-// let closePostsPopupBtn = document.querySelector('.closePostsPopupBtn'); // Кнопки для закрытия окна
-
-// let containerPostsPopup = document.querySelector('.container-postsPopup'); // Само окно
-// let postsPopup = document.querySelector('.postsPopup'); // Фон попап окна
-
-// // открытие поп-апа
-// openPostsPopupBtn.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
-//               e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-//               containerPostsPopup.classList.add('active'); // И с окна
-//               postsPopup.classList.add('active'); // И с окна
-// });
-
-// // закрытие поп-апа с крестика
-// closePostsPopupBtn.addEventListener('click',() => { // Вешаем обработчик на крестик
-//         containerPostsPopup.classList.remove('active'); // И с окна
-//         postsPopup.classList.remove('active'); // И с окна
-// });
 
 
 // ************************кнопка НАВЕРХ*****************
@@ -394,54 +384,7 @@ const btnUp = {
 }
 btnUp.addEventListener();
 
-// ************************СЛАЙДЕР в ПРАЙСЕ****************************
 
-// const priceNextButton = document.querySelector('.slider-button-next');
-// const pricePrevButton = document.querySelector('.slider-button-prev');
-// var priceSlides = document.querySelectorAll(".price-slide");
-// showSlides(slideIndex);
-
-// priceNextButton.addEventListener('click', plusSlide);
-// pricePrevButton.addEventListener('click', minusSlide);
-
-// var priceSlider = new Swiper('.price-slider', {
-//         initialSlide: 0,
-//         watchOverflow: true,
-//         breakpoints:{
-//                 320: {
-//                         slidesPerView: 1,
-//                         spaceBetween: 10,
-//                         scrollbar: {
-//                                 el: 'swiper-scrollbar',
-//                                 draggable: true
-//                         },
-//                 },
-//                 660: {
-//                         slidesPerView: 2,
-//                         spaceBetween: 40,
-//                 },
-//                 1024: {
-//                         slidesPerView: 2,
-//                         spaceBetween: 20,
-//                 },
-//                 1200: {
-//                         slidesPerView: 3,
-//                         spaceBetween: 50,
-//                         scrollbar: false,
-//                 }
-//         },
-//         slidesPerView: 'auto',
-//         spaceBetween: 30,
-        
-// });
-
-
-// var test = new Swiper ('.test',{
-//         scrollbar: {
-//                 el: 'swiper-scrollbar',
-//                 draggable: true
-//         },
-// });
 
 // ************************СЛАЙДЕР СЕРТИФИКАТЫ****************************
 var diplomSlides = new Swiper('.diplom-slides', {
@@ -507,8 +450,3 @@ var diplomSlides = new Swiper('.diplom-slides', {
 
 
 });
-
-
-
-
-// ************************ПУБЛИКАЦИИ****************************
