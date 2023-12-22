@@ -35,6 +35,8 @@ main{
     position: relative;
     /* width: 100vw; */
     min-width: 0;
+    /* overflow-x: hidden; */
+
 }
 
 .container {
@@ -1204,6 +1206,7 @@ h1{
 
 .diplom-slides{
     padding: 0;
+    overflow: hidden;
 }
 .diplom-slides .swiper-slide {
     width: 368px !important;
