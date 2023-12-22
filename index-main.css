@@ -22,9 +22,9 @@ body{
     /* height: 100vh; */
 }
 
-body.modal-open{
+/* body.modal-open{
     overflow: hidden;
-}
+} */
 
 main{
     background: rgba(255, 255, 255, 1);
@@ -424,19 +424,22 @@ img.rot {
     font-weight: 700;
     font-size:3vw;
     letter-spacing: -0.05em;
+    text-align: center;
+
 }
 
 .nav ul li{
     display: inline-block;
     font-size: 3em;
+    margin-left: -3%;
 }
 
 .nav ul{
     clear: both;
     width: 100%;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
 
 }
 
@@ -453,7 +456,6 @@ img.rot {
     .nav ul {
         clear: both;
         width: 100%;
-        text-align: center;
         padding: 0;
     }
 
@@ -463,6 +465,8 @@ img.rot {
         font-weight: 700;
         font-size: 6vw;
         letter-spacing: -0.05em;
+        display: flex;
+        flex-direction: column;
     }
 }
 
