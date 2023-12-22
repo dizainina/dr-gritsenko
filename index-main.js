@@ -274,6 +274,11 @@ openPopupButtons.forEach((button) => { // Перебираем все кнопк
                 popupBg.classList.add('active'); // Добавляем класс 'active' для фона
                 popup.classList.add('active'); // И для самого окна
                 body.classList.add('modal-open');
+                // document.getElementById('dialog').classList.add('show')
+                const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+                // const body = document.body;
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollY}`;
 
         })
 });
@@ -282,6 +287,12 @@ closePopupButton.addEventListener('click',() => { // Вешаем обработ
         popupBg.classList.remove('active'); // Убираем активный класс с фона
         popup.classList.remove('active'); // И с окна
         body.classList.remove('modal-open'); // включаем прокрутку
+        // const body = document.body;
+        const scrollY = body.style.top;
+        body.style.position = '';
+        body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        // document.getElementById('dialog').classList.remove('show');
 
 });
 
@@ -291,9 +302,19 @@ document.addEventListener('click', (e) => { // Вешаем обработчик
                 popupBg.classList.remove('active'); // Убираем активный класс с фона
                 popup.classList.remove('active'); // И с окна
                 body.classList.remove('modal-open'); // включаем прокрутку
+                const scrollY = body.style.top;
+                body.style.position = '';
+                body.style.top = '';
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                // document.getElementById('dialog').classList.remove('show');
 
         }
 });
+window.addEventListener('scroll', () => {
+        document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+      });
+
+
 
 
 // *************************ПОП-АП Отзывы**********************************
