@@ -19,7 +19,7 @@ body{
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 body.modal-open{
@@ -1578,12 +1578,12 @@ iframe{
     .commentsFlex, .row{
         width: 100%;
     }
-    .experience{
+    .experience, .certificate{
         width: 93vw;
 
     }
 
-     .advantages, .comment, .certificate,  .posts, .container-footer, .post-item, .post-item-image img, .adv, .about{
+     .advantages, .comment,  .posts, .container-footer, .post-item, .post-item-image img, .adv, .about{
         width: 100%;
     }
     .advMiddle{
@@ -2165,7 +2165,7 @@ iframe{
     }
     .header{
         /* height: 700px; */
-        background-size: 140%;
+        background-size: 146%;
     }
 }
 /* ------------------------------ */
