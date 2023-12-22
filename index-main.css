@@ -24,6 +24,7 @@ body{
 
 /* body.modal-open{
     overflow: hidden;
+    position: fixed;
 } */
 
 main{
@@ -1582,8 +1583,13 @@ iframe{
     .commentsFlex, .row{
         width: 100%;
     }
-    .experience, .certificate{
+    .experience{
         width: 93vw;
+
+    }
+    .certificate{
+        width: 100%;
+        overflow-x: hidden;
 
     }
 
