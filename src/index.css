@@ -6,10 +6,10 @@
 
 }
 
-/* body, html{
+body, html{
   width: calc(100vw - 8px);
-
-} */
+  /* overflow-x: hidden; */
+}
 body ._lock{
   overflow: hidden;
 }
@@ -409,6 +409,9 @@ h1{
 
 }
 @media (max-width: 980px){
+  body, html{
+    overflow-x: hidden;
+  }
   .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 980px;
   }
