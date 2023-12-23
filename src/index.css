@@ -7,8 +7,10 @@
 }
 
 body, html{
-    width: 100%;
-  overflow-x: hidden;
+  width: calc(100vw - 8px);
+
+    /* width: 100%; */
+  /* overflow-x: hidden; */
 
 }
 body ._lock{
