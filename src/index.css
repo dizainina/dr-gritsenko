@@ -420,6 +420,7 @@ h1{
   }
   .commentsPopup-navigation{
     width: 90%;
+    margin-bottom: 15%;
   }
 }
 @media (max-width: 900px){
