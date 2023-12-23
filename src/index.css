@@ -63,6 +63,8 @@ h1{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 10%;
+
   /* margin: 0 auto; */
 }
 .commentsPopup-navigation a{
@@ -372,6 +374,9 @@ h1{
   }
   .commentsPopup-navigation{
     justify-content: center !important;
+    margin-bottom: 20%;
+
+
   }
   .commentsFlex {
     display: flex;
@@ -418,6 +423,7 @@ h1{
   .commentsPopup-navigation{
     width: 90%;
     margin-bottom: 30%;
+
   }
 }
 @media (max-width: 900px){
