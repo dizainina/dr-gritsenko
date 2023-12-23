@@ -2070,9 +2070,6 @@ iframe{
 /* ------------------------------ */
 @media (max-width: 590px){
     .header{
-        /* background-size: 100vh; */
-
-        /* height: 700px; */
         background-size: 141%;
     }
     .container {
@@ -2119,9 +2116,6 @@ iframe{
         height: 100%;
         margin: 0 auto;
     }
-    /* .small-text{
-        font-size: 20px;
-    } */
     .popup {
         width: 367px;
     }
@@ -2137,7 +2131,6 @@ iframe{
     }
     .popup {
         width: 315px;
-        /* height: 528px; */
     }
         .popup-text{
         font-size: 28px;
@@ -2153,18 +2146,12 @@ iframe{
         /* height: 700px; */
         background-size: 168%;
         background-position-x: 65%;
-
-
     }
 }
 /* ------------------------------ */
 @media (max-width: 414px){
     .header{
         background-size: 100vh;
-
-        /* height: 658px; */
-        /* background-size: 151%; */
-        /* background-position-x: 65%; */
     }
     .container {
         width: 414px;
@@ -2208,10 +2195,6 @@ iframe{
     .slider-container{
         padding: 15px;
     }
-    /* .small-text{
-        font-size: 29px;
-    } */
-
         .popup-text{
         font-size: 26px;
     }
@@ -2238,7 +2221,9 @@ iframe{
     .item_col h1{
         font-size: 25px;
     }
-
+    .small-text{
+        font-size: 18px;
+    }
 }
 @media (max-width: 380px)  and (max-height: 650px){
     .container {
@@ -2246,26 +2231,18 @@ iframe{
     padding: 0 14%;
 
     }
-
-    /* .comment, .posts, .advantages, .experience {
-    padding: 0 2%;
-
-    } */
+    .small-text{
+        font-size: 18px;
+    }
     .header{
-        /* height: 658px; */
-        /* background-size: 170%; */
         background-position-x: 84%;
     }
 
     .slider-container{
         padding: 0;
     }
-    /* .small-text{
-        font-size: 25px;
-    } */
     .popup {
         width: 280px;
-        /* height: 500px; */
     }
     .popup-text{
         font-size: 24px;
@@ -2274,19 +2251,13 @@ iframe{
         width: 300px;
         height: 537px;
         background-image: url(images/price-bg-active-small.png);
-    background-size: contain;
-
-
-
-        /* padding: 2.3rem 0.5rem; */
-        /* background-size: contain; */
-
+        background-size: contain;
     }
     .price-item:hover{
         width: 300px;
         height: 537px;
         background-image: url(images/price-bg-active-small.png);
-    background-size: contain;
+        background-size: contain;
 
     }
     .text-white-small{
@@ -2300,19 +2271,11 @@ iframe{
         display: none;
     }
 }
-@media (max-width: 340px){
-    .header{
-        /* height: 658px; */
-        /* background-size: 178%; */
-    }
-}
 /* ------------------------------ */
 @media ((max-width: 1670px) and (min-height: 2468px)) or ((max-width: 890px) and (min-height: 1290px)){
     .header{
-        /* height: 658px; */
         background-size: 100vh;
     }
-
 }
 /* ------------------------------ */
 @media (max-width: 280px){
@@ -2325,23 +2288,14 @@ iframe{
     .comment h1{
         font-size: 2rem;
     }
-    .header{
-        /* height: 658px; */
-        /* background-size: 172%; */
-    }
     .slider {
-        /* height: 431px; */
         justify-content: start;
     }
     .popup {
         width: 260px;
-        /* height: 489px; */
     }
     .popup-text{
         font-size: 20px;
-    }
-    .small-text{
-        font-size: 18px;
     }
     .price-item{
         width: 270px;
@@ -2350,5 +2304,4 @@ iframe{
     .text-white-small{
         font-size: 13px;
     }
-
 }
