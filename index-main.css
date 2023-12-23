@@ -1490,6 +1490,7 @@ iframe{
 @media (max-height: 730px) and (min-width: 1200px){
     .popup {
         height: 60vh;
+        top: 35%;
     }
 }
 @media (min-width: 1200px){
@@ -1880,6 +1881,9 @@ iframe{
     }
     .item_col h1{
         font-size: 30px;
+    }
+    .popup {
+        top: 35%;
     }
 }
 /* ------------------------------ */
