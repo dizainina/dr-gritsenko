@@ -362,10 +362,9 @@ h1{
   .titleMain {
     height: 4rem;
   }
-  /* body, html{
+  body, html{
     overflow-x: hidden;
-    width: 100%;
-} */
+  }
 }
 @media (max-width: 1024px){
   .modal-container_postsPopup, .main-post, .div-for-quote {
@@ -409,9 +408,7 @@ h1{
 
 }
 @media (max-width: 980px){
-  body, html{
-    overflow-x: hidden;
-  }
+
   .modal-container_postsPopup, .main-post, .div-for-quote {
       width: 980px;
   }
