@@ -1725,7 +1725,8 @@ iframe{
     }
     .col-about{
         width: 49vw;
-        margin-left: 1vw;
+        padding-left: 4vw;
+        padding-right: 2vw;
     }
     .row-comment>p{
         font-size: 8px;
@@ -1779,13 +1780,9 @@ iframe{
     .about{
         flex-direction: column;
         width: 100%;
-        padding: 0;
-        margin: 0;
     }
     .col-about {
         width: 100%;
-        padding: 0;
-        margin: 0;
     }
     .main-photo{
         display: flex;
@@ -2179,7 +2176,10 @@ iframe{
     }
     .header{
         /* height: 700px; */
-        background-size: 146%;
+        background-size: 149%;
+        background-position-x: 65%;
+
+
     }
 }
 /* ------------------------------ */
@@ -2187,7 +2187,7 @@ iframe{
     .header{
         /* height: 658px; */
         background-size: 151%;
-        background-position-x: 65%;
+        /* background-position-x: 65%; */
     }
     .container {
         width: 414px;
